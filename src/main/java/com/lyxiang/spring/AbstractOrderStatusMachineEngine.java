@@ -50,4 +50,5 @@ public abstract class AbstractOrderStatusMachineEngine<T extends UntypedStateMac
 
     protected abstract boolean accept(OrderState orderState);
 
+
 }

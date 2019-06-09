@@ -1,0 +1,16 @@
+digraph {
+compound=true;
+subgraph cluster_StateMachine {
+label="com.lyxiang.fluent.OrderStateMachine";
+COMPLETE [label="COMPLETE"];
+WAIT_PAY [label="WAIT_PAY"];
+PART_SEND [label="PART_SEND"];
+WAIT_RECEIVE [label="WAIT_RECEIVE"];
+WAIT_SEND [label="WAIT_SEND"];
+INIT [label="INIT"];
+
+WAIT_PAY -> WAIT_SEND [ label="PAY"];
+PART_SEND -> WAIT_RECEIVE [ label="SEND"];
+WAIT_RECEIVE -> COMPLETE [ label="COMPLETE"];
+WAIT_SEND -> PART_SEND [ label="PART_SEND"];
+INIT -> WAIT_PAY [ label="SUBMIT_ORDER"];}}
