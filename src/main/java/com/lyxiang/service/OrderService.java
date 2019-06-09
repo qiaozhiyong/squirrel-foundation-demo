@@ -22,7 +22,11 @@ public class OrderService {
         OrderDTO orderDTO = new OrderDTO(OrderState.INIT.name());
         OrderContext orderContext = new OrderContext(orderDTO);
         orderStateMachineEngineFactory.fire(orderContext, OrderEvent.SUBMIT_ORDER);
-        return orderContext.orderDTO.getId();
+        OrderDTO orderDTO2 = new OrderDTO(OrderState.WAIT_PAY.name());
+        OrderContext orderContext2 = new OrderContext(orderDTO2);
+        orderStateMachineEngineFactory.fire(orderContext2, OrderEvent.PAY);
+        return 1;
+        //return orderContext.orderDTO.getId();
     }
 
 }

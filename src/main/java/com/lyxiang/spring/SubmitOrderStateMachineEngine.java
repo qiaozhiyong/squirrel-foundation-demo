@@ -12,7 +12,7 @@ public class SubmitOrderStateMachineEngine extends AbstractOrderStatusMachineEng
 
     @Override
     protected boolean accept(OrderState orderState) {
-        return OrderState.INIT == orderState;
+        return true;
     }
 
 }

@@ -39,20 +39,20 @@ public class SubmitOrderStateMachine extends BaseOrderStateMachine {
 
     @Override
     protected void afterTransitionCompleted(Object fromState, Object toState, Object event, Object context) {
-        if (fromState instanceof OrderState && toState instanceof OrderState) {
+       /* if (fromState instanceof OrderState && toState instanceof OrderState) {
             OrderContext orderContext = (OrderContext) context;
             OrderDTO orderDTO = orderContext.orderDTO;
             orderDTO.setState(((OrderState) toState).name());
             orderDTOMapper.insert(orderDTO);
-        }
+        }*/
     }
 
     public void submitOrder(OrderState fromState, OrderState toState, OrderEvent orderEvent, OrderContext orderContext) {
-        System.out.println("pay");
+        System.out.println("qiao1");
     }
 
     public void pay(OrderState fromState, OrderState toState, OrderEvent orderEvent, OrderContext orderContext) {
-        System.out.println("pay");
+        System.out.println("qiao2");
     }
 
     public void partSend(OrderState fromState, OrderState toState, OrderEvent orderEvent, OrderContext orderContext) {
