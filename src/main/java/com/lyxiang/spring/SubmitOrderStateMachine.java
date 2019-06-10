@@ -5,6 +5,7 @@ import com.lyxiang.pojo.OrderDTO;
 import com.lyxiang.common.OrderEvent;
 import com.lyxiang.common.OrderState;
 import org.springframework.context.ApplicationContext;
+import org.springframework.dao.QueryTimeoutException;
 import org.squirrelframework.foundation.fsm.annotation.State;
 import org.squirrelframework.foundation.fsm.annotation.StateMachineParameters;
 import org.squirrelframework.foundation.fsm.annotation.States;
@@ -49,6 +50,8 @@ public class SubmitOrderStateMachine extends BaseOrderStateMachine {
 
     public void submitOrder(OrderState fromState, OrderState toState, OrderEvent orderEvent, OrderContext orderContext) {
         System.out.println("qiao1");
+        throw new RuntimeException("22");
+
     }
 
     public void pay(OrderState fromState, OrderState toState, OrderEvent orderEvent, OrderContext orderContext) {

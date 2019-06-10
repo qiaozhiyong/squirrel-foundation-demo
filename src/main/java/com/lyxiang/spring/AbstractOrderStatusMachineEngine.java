@@ -42,6 +42,7 @@ public abstract class AbstractOrderStatusMachineEngine<T extends UntypedStateMac
                 applicationContext);
         try {
             stateMachine.fire(orderEvent, orderContext);
+            stateMachine.fire(OrderEvent.PAY, orderContext);
         } catch (Exception e) {
             logger.error("stateMachine.fire error");
         }
